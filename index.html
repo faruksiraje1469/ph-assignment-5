@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DevBoard</title>
+  
+    <!-- Google Font -->
+    <!-- Adlam Display Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=ADLaM+Display&display=swap" rel="stylesheet" />
+    <!-- Sora Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap" rel="stylesheet" />
+  
+    <!-- Tailwind+Daisy Cdn -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.23/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/2f01c477f1.js" crossorigin="anonymous"></script>
+    <style>
+      .sora-font {
+        font-family: "Sora", serif;
+      }
+  
+      .adlam-font {
+        font-family: "ADLaM Display", serif;
+      }
+
+      .animate-fadeInScale {
+        animation: fadeInScale 3s ease-in-out infinite;
+      }
+    </style>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              clifford: "#da373d",
+              "btn-primary": "#FFDC26",
+              "card-bg": "#F9DF8A",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+<body class="sora-font bg-base-200">
+   <!-- Navbar -->
+    <nav class="max-w-7xl mx-auto  ">
+      <div class="navbar bg-base-100 rounded-xl  ">
+        <div class="navbar-start">
+          <div class="dropdown">
+            <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-5 w-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h8m-8 6h16" />
+              </svg>
+            </div>
+            <ul
+              tabindex="0"
+              class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
+              <li><a>Item 1</a></li>
+              <li>
+                <a>Parent</a>
+                <ul class="p-2">
+                  <li><a>Submenu 1</a></li>
+                  <li><a>Submenu 2</a></li>
+                </ul>
+              </li>
+              <li><a>Item 3</a></li>
+            </ul>
+          </div>
+          <a class="btn btn-ghost text-xl"> <img class="" src="./assets/logo.png" alt=""> DevBoard</a>
+        </div>
+        
+        <div class="navbar-end">
+          <a class="btn"><img src="./assets/checkbox.png" alt=""><span id="completedTask">23</span></a>
+        </div>
+        <div>
+          <img class="ml-4" id="themeChanger" src="assets/theme-btn.png" alt="">
+        </div>
+      </div>
+    </nav>
+
+    <main class="max-w-7xl mx-auto mb-4">
+      <div class="grid grid-cols-4 gap-10 bg-base-100 rounded-xl p-4 mt-4">
+
+        <!-- main section -->
+        <div class="col-span-3">
+          <div class="grid grid-cols-3   gap-4 mt-4 ">
+            <div class="">
+              <!-- <h2>Discover Something New Today</h2> -->
+              <div class="card bg-base-200 w-72 shadow-sm">
+                <div class="card-body grid grid-cols-2">
+                  <div>
+                   <img src="./assets/checkbox.png" alt="">
+                  </div>
+                  <div>
+                     <p>Task Assign <br><span id="taskAssigned">6</span></p>
+                  </div>
+                 
+                </div>
+              </div>
+            </div>
+
+
+            <div id="discover" class="">
+              <!-- <h2>Discover Something New Today</h2> -->
+              <div class="card  bg-gradient-to-r from-[#3752FD] to-[#9BA8F8] w-72 shadow-sm">
+                <div class="card-body">
+                 <div class="grid grid-cols-2">
+                  <div><img src="./assets/board.png" alt=""></div>
+                  <div class="text-white"> <p>Discover Something <br> New Today</p></div>
+                 </div>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="">
+              <!-- <h2>Date</h2> -->
+              <div class="card bg-base-200 w-72 shadow-sm">
+                <div class="card-body">
+                  <div class="grid grid-cols-2">
+                    <div>
+                      <img src="./assets/calender.png" alt="">
+                    </div>
+                    <div>
+                      <p><span id="todayDay"></span> <br><span id="showTodayDate">July 28 2025</span></p>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- card -->
+          <div class="grid grid-cols-3 gap-4 mt-4">
+            <!-- card 1 -->
+            <div class="card bg-base-200 w-72 shadow-sm">
+              <div class="card-body">
+                <div class="card-actions justify-start">
+                  <button class="btn btn-primary bg-slate-50 text-black border-none">Shop Ease</button>
+                </div>
+                <h2 class="card-title">Fix Mobile Button Issue </h2>
+                <div class="bg-base-100 rounded-xl p-2">
+                  <p >Debug using Chrome DevTools, check for overlapping elements, and ensure onClick works properly
+                    and ensure onClick works properly</p>
+                </div>
+                <div class="card-actions justify-end">
+                  <p>Deadline <br><span>21 March,2025</span></p>
+                  <button class="btn btnComp btn-primary">Comple</button>
+                </div>
+              </div>
+            </div>
+             <!-- card 2 -->
+             <div class="card bg-base-200 w-72 shadow-sm">
+              <div class="card-body">
+                <div class="card-actions justify-start">
+                  <button class="btn btn-primary bg-slate-50 text-black border-none">Shop Ease</button>
+                </div>
+                <h2 class="card-title">Fix Mobile Button Issue </h2>
+                <div class="bg-base-100 rounded-xl p-2">
+                  <p >Debug using Chrome DevTools, check for overlapping elements, and ensure onClick works properly
+                    and ensure onClick works properly</p>
+                </div>
+                <div class="card-actions justify-end">
+                  <p>Deadline <br><span>21 March,2025</span></p>
+                  <button class="btn btnComp btn-primary">Comple</button>
+                </div>
+              </div>
+            </div>
+             <!-- card 3 -->
+             <div class="card bg-base-200 w-72 shadow-sm">
+              <div class="card-body">
+                <div class="card-actions justify-start">
+                  <button class="btn btn-primary bg-slate-50 text-black border-none">Shop Ease</button>
+                </div>
+                <h2 class="card-title">Fix Mobile Button Issue </h2>
+                <div class="bg-base-100 rounded-xl p-2">
+                  <p >Debug using Chrome DevTools, check for overlapping elements, and ensure onClick works properly
+                    and ensure onClick works properly</p>
+                </div>
+                <div class="card-actions justify-end">
+                  <p>Deadline <br><span>21 March,2025</span></p>
+                  <button class="btn btnComp btn-primary">Comple</button>
+                </div>
+              </div>
+            </div>
+
+             <!-- card 4 -->
+             <div class="card bg-base-200 w-72 shadow-sm">
+              <div class="card-body">
+                <div class="card-actions justify-start">
+                  <button class="btn btn-primary bg-slate-50 text-black border-none">Shop Ease</button>
+                </div>
+                <h2 class="card-title">Fix Mobile Button Issue </h2>
+                <div class="bg-base-100 rounded-xl p-2">
+                  <p >Debug using Chrome DevTools, check for overlapping elements, and ensure onClick works properly
+                    and ensure onClick works properly</p>
+                </div>
+                <div class="card-actions justify-end">
+                  <p>Deadline <br><span>21 March,2025</span></p>
+                  <button class="btn btnComp btn-primary">Comple</button>
+                </div>
+              </div>
+            </div>
+
+             <!-- card 5 -->
+             <div class="card bg-base-200 w-72 shadow-sm">
+              <div class="card-body">
+                <div class="card-actions justify-start">
+                  <button class="btn btn-primary bg-slate-50 text-black border-none">Shop Ease</button>
+                </div>
+                <h2 class="card-title">Fix Mobile Button Issue </h2>
+                <div class="bg-base-100 rounded-xl p-2">
+                  <p >Debug using Chrome DevTools, check for overlapping elements, and ensure onClick works properly
+                    and ensure onClick works properly</p>
+                </div>
+                <div class="card-actions justify-end">
+                  <p>Deadline <br><span>21 March,2025</span></p>
+                  <button class="btn btnComp btn-primary">Comple</button>
+                </div>
+              </div>
+            </div>
+
+             <!-- card 6 -->
+             <div class="card bg-base-200 w-72 shadow-sm">
+              <div class="card-body">
+                <div class="card-actions justify-start">
+                  <button class="btn btn-primary bg-slate-50 text-black border-none">Shop Ease</button>
+                </div>
+                <h2 class="card-title">Fix Mobile Button Issue </h2>
+                <div class="bg-base-100 rounded-xl p-2">
+                  <p >Debug using Chrome DevTools, check for overlapping elements, and ensure onClick works properly
+                    and ensure onClick works properly</p>
+                </div>
+                <div class="card-actions justify-end">
+                  <p>Deadline<br><span>21 March,2025</span></p>
+                  <button class="btn btnComp btn-primary">Comple</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Activity Log -->
+        <div class="mt-4 mb-4">
+          <div class="card bg-base-100 w-72 h-screen shadow-xl">
+            <div class="card-body text-center">
+              
+              <h2>Activity Log</h2>
+              <div>
+                <button id="clearHistory" class="btn btn-primary">Clear History</button>
+              </div>
+              <hr>
+              <div class="flex flex-col gap-4" id="history">
+                
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <script src="JS/button.js"></script>
+      <script src="JS/toBlog.js"></script>
+      <script src="JS/today.js"></script>
+    </main>
+</body>
+</html>
